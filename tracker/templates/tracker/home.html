@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weekly Allowance Tracker</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'tracker/styles.css' %}">
+</head>
+<body>
+    <h1>Weekly Allowance Tracker</h1>
+    <p>Total Spent: {{ total_spent }}</p>
+    <p>Total Saved: {{ total_saved }}</p>
+
+    <h2>Weeks</h2>
+    <ul>
+        {% for week in weeks %}
+        <li>
+            <strong>Week {{ week.number }}</strong> ({{ week.start_date }} - {{ week.end_date }})<br>
+            <b>Weekly Budget:</b> {{ week.weekly_budget }}<br>
+            <b>Total Spent:</b> {{ week.total_spent }}<br>
+            <b>Total Saved:</b> {{ week.total_saved }}<br>
+            <b>Daily Breakdown:</b><br>
+            Sunday: {{ week.sunday }} |
+            Monday: {{ week.monday }} |
+            Tuesday: {{ week.tuesday }} |
+            Wednesday: {{ week.wednesday }} |
+            Thursday: {{ week.thursday }} |
+            Friday: {{ week.friday }} |
+            Saturday: {{ week.saturday }}<br>
+
+            <a href="{% url 'edit_week' week.id %}">Edit</a> |
+            <a href="{% url 'delete_week' week.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_week' %}">Create New Week</a> 
+</body>
+</html>

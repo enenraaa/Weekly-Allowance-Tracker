@@ -1,0 +1,17 @@
+# Ignore the virtual environment
+venv/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore SQLite database file
+db.sqlite3
+
+# Ignore VS Code workspace settings
+.vscode/
+
+# Ignore swap files (temporary files created when editing)
+*.swp
+*.swo
