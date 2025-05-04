@@ -17,7 +17,7 @@ The **Weekly Allowance Tracker** is a simple **CRUD (Create, Read, Update, Delet
 - **Backend:** Django (Python)
 - **Frontend:** HTML, CSS  
 - **Database:** SQLite  
-- **Version Control:** Git & GitHub  
+- **Tools:** Git, Github, VS Code
 
 ---
 
@@ -36,7 +36,7 @@ python -m venv venv
 **Activate the virtual environment:**
 - Windows (PowerShell):  
 `bash
-venv\Scripts\activate
+venv\Scripts\Activate.ps1
 `
 
 - Mac/Linux:  
@@ -44,9 +44,9 @@ venv\Scripts\activate
 source venv/bin/activate
 ``
 
-### Step 3: Install Dependencies
+### Step 3: Install Django
 ```bash
-pip install -r requirements.txt
+pip install django
 ```
 
 ### Step 4: Apply Migrations
@@ -59,18 +59,19 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+**Open your browser and go to:**
+http://127.0.0.1:8000/
 
 ---
 
-📂 Project Structure  
-📂 Weekly-Allowance-Tracker/  
+### 📂 Project Structure
+📂 allowance_tracker/  
 │── 📂 allowance_tracker/       `# Django project folder`  
 │── 📂 tracker/                 `# Main app`  
 │── 📂 templates/               `# HTML files`  
 │── 📂 static/                  `# CSS styles`  
-│── venv/                       `# Virtual environment (ignored by Git)`  
+│── 📂venv/                     `# Virtual environment (ignored by Git)`  
 │── manage.py                   `# Django project manager`  
-│── requirements.txt            `# Dependencies list`  
 │── .gitignore                  `# Files to ignore in Git`    
 │── README.md                   `# Project documentation (this file)`  
 
